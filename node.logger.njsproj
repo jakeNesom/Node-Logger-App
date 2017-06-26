@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>node.logger</Name>
+    <RootNamespace>NodejsConsoleApp1</RootNamespace>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <EnableTypeScript>true</EnableTypeScript>
+    <TypeScriptSourceMap>true</TypeScriptSourceMap>
+    <TypeScriptModuleKind>CommonJS</TypeScriptModuleKind>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>ba8dd175-8230-4760-856a-f9be1ecd8fc4</ProjectGuid>
+    <ProjectHome>
+    </ProjectHome>
+    <StartupFile>app.js</StartupFile>
+    <StartWebBrowser>False</StartWebBrowser>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <ProjectView>ProjectFiles</ProjectView>
+    <StartWebBrowser>false</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="app.js" />
+    <Compile Include="loggerVizApp-master\karma.conf.js" />
+    <Compile Include="loggerVizApp-master\protractor.conf.js" />
+    <Compile Include="loggerVizApp-master\src\app\definitions\dataset.js" />
+    <Content Include="loggerVizApp-master\.angular-cli.json" />
+    <Content Include="loggerVizApp-master\.editorconfig" />
+    <Content Include="loggerVizApp-master\.gitignore" />
+    <Content Include="loggerVizApp-master\e2e\tsconfig.e2e.json" />
+    <Content Include="loggerVizApp-master\package.json" />
+    <Content Include="loggerVizApp-master\package.json.old" />
+    <Content Include="loggerVizApp-master\README.md" />
+    <Content Include="loggerVizApp-master\src\app\css\app.component.css" />
+    <Content Include="loggerVizApp-master\src\app\css\display.css" />
+    <Content Include="loggerVizApp-master\src\app\css\livecount.css" />
+    <Content Include="loggerVizApp-master\src\app\css\slider.css" />
+    <Content Include="loggerVizApp-master\src\app\css\radioslider.css" />
+    <Content Include="loggerVizApp-master\src\app\definitions\dataset.js.map" />
+    <Content Include="loggerVizApp-master\src\app\definitions\loggerData.js.map" />
+    <Content Include="loggerVizApp-master\src\app\views\app.component.html" />
+    <Content Include="loggerVizApp-master\src\app\views\display.html" />
+    <Content Include="loggerVizApp-master\src\app\views\liveCount.html" />
+    <Content Include="loggerVizApp-master\src\app\views\options.html" />
+    <Content Include="loggerVizApp-master\src\app\views\setchart.html" />
+    <Content Include="loggerVizApp-master\src\app\views\testchart.html" />
+    <Content Include="loggerVizApp-master\src\assets\.gitkeep" />
+    <Content Include="loggerVizApp-master\src\favicon.ico" />
+    <Content Include="loggerVizApp-master\src\index.html" />
+    <Content Include="loggerVizApp-master\src\styles.css" />
+    <Content Include="loggerVizApp-master\src\tsconfig.app.json" />
+    <Content Include="loggerVizApp-master\src\tsconfig.spec.json" />
+    <Content Include="loggerVizApp-master\tsconfig.json" />
+    <Content Include="loggerVizApp-master\tslint.json" />
+    <Content Include="package.json" />
+    <Content Include="README.md" />
+    <Content Include="socket.html" />
+    <Content Include="socket_batch.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="loggerVizApp-master\" />
+    <Folder Include="loggerVizApp-master\e2e\" />
+    <Folder Include="loggerVizApp-master\src\" />
+    <Folder Include="loggerVizApp-master\src\app\" />
+    <Folder Include="loggerVizApp-master\src\app\css\" />
+    <Folder Include="loggerVizApp-master\src\app\definitions\" />
+    <Folder Include="loggerVizApp-master\src\app\services\" />
+    <Folder Include="loggerVizApp-master\src\app\views\" />
+    <Folder Include="loggerVizApp-master\src\assets\" />
+    <Folder Include="loggerVizApp-master\src\environments\" />
+    <Folder Include="typings\" />
+    <Folder Include="typings\globals\" />
+    <Folder Include="typings\globals\node\" />
+    <Folder Include="typings\globals\socket.io\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="loggerVizApp-master\e2e\app.e2e-spec.ts" />
+    <TypeScriptCompile Include="loggerVizApp-master\e2e\app.po.ts" />
+    <TypeScriptCompile Include="loggerVizApp-master\src\app\app.component.spec.ts" />
+    <TypeScriptCompile Include="loggerVizApp-master\src\app\app.component.ts" />
+    <TypeScriptCompile Include="loggerVizApp-master\src\app\app.module.ts" />
+    <TypeScriptCompile Include="loggerVizApp-master\src\app\definitions\dataset.ts" />
+    <TypeScriptCompile Include="loggerVizApp-master\src\app\display.component.ts" />
+    <TypeScriptCompile Include="loggerVizApp-master\src\app\liveCount.component.ts" />
+    <TypeScriptCompile Include="loggerVizApp-master\src\app\services\dataManip.service.ts" />
+    <TypeScriptCompile Include="loggerVizApp-master\src\app\services\loggerdata.service.ts" />
+    <TypeScriptCompile Include="loggerVizApp-master\src\app\setChart.component.ts" />
+    <TypeScriptCompile Include="loggerVizApp-master\src\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="loggerVizApp-master\src\environments\environment.ts" />
+    <TypeScriptCompile Include="loggerVizApp-master\src\main.ts" />
+    <TypeScriptCompile Include="loggerVizApp-master\src\polyfills.ts" />
+    <TypeScriptCompile Include="loggerVizApp-master\src\test.ts" />
+    <TypeScriptCompile Include="loggerVizApp-master\src\typings.d.ts" />
+    <TypeScriptCompile Include="typings\globals\node\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\socket.io\index.d.ts" />
+    <TypeScriptCompile Include="typings\index.d.ts" />
+  </ItemGroup>
+  <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+</Project>

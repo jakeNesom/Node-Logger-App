@@ -1,0 +1,31 @@
+
+<!-- 
+    Test view to test the chartjs version of the auto-updating chart implementation
+-->
+
+
+<div class="col-sm-8 col-lg-9">
+     <div class="well">
+        <div>
+          <div style="display: block">
+            <!-- chart JS implementation for testing -->
+            <canvas id='updating-chart' width="500" height="300">
+
+            </canvas>
+
+             <!--<canvas id="chart" width="300" height="300"></canvas>-->
+          </div>
+          <button (click)="updateData()">Update Data</button>
+        </div>
+     </div> <!-- end of well -->
+     <div class="well">
+          
+          
+          <ul>
+            <li *ngFor="let record of dataset">Record #: {{record.id}} Client: {{record.client}} TimeStamp: {{record.time}} Node: {{record.node}}</li>
+          </ul> 
+
+         
+     </div>
+</div>
+

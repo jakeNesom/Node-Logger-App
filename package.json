@@ -1,0 +1,24 @@
+{
+  "author": {
+    "name": "sahmed"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "cluster": "^0.7.7",
+    "connect": "^3.6.1",
+    "cors": "^2.8.1",
+    "ejs": "^2.5.5",
+    "express": "^4.14.1",
+    "milli-epoch": "0.0.2",
+    "mongodb": "^2.2.24",
+    "mongojs": "^2.4.0",
+    "socket.io": "^1.7.2"
+  },
+  "description": "clientserverExpSockIO",
+  "main": "cluster.js",
+  "name": "clientserver-exp-sock-io",
+  "references": {
+    "MEAN": "https://scotch.io/tutorials/use-ejs-to-template-your-node-application"
+  },
+  "version": "0.0.0"
+}

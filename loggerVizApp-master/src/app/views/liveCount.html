@@ -1,0 +1,68 @@
+ <div class="col-sm-7 col-lg-6">
+    <div class="panel panel-default panel-body" style="width:100%;" >
+        <button type="button" class="btn btn-sm btn-default pull-right" placement="bottom"
+                [ngbPopover]='popContent'>
+            <i class="fa fa-cog fa-2x" aria-hidden="true" style="color:grey;"></i>
+        </button>
+                <chart style="display:inherit; height:95%;" [options]="options"
+                    (load)="saveInstance($event.context)">
+                </chart>
+ 
+        
+       
+        
+        <div class="row">
+            
+           
+            
+            <ng-template #popContent >
+                <strong>Options</strong>
+                
+                
+               
+                    <div class="toggle_radio" style="margin-top: 13px;">
+                        <input type="radio" (click)="settingToggle($event.target.value)" value="Client" class="toggle_option" id="first_toggle" name="toggle_option">
+                        <input type="radio" (click)="settingToggle($event.target.value)" value="Node" checked class="toggle_option" id="second_toggle" name="toggle_option">
+                        <input type="radio" (click)="settingToggle($event.target.value)" value="LogType" class="toggle_option" id="third_toggle" name="toggle_option">
+                        <label for="first_toggle" [ngClass]="{'setting-selected' : dataType === 'Client' }"><p>clients</p></label>
+                        <label for="second_toggle" [ngClass]="{'setting-selected' : dataType === 'Node' }"><p>nodes</p></label>
+                        <label for="third_toggle" [ngClass]="{'setting-selected' : dataType === 'LogType' }"><p>logType</p></label>
+                        <div class="toggle_option_slider">
+                        </div>
+                    </div>
+                    <div>
+                        <span style="font-size:10px; margin-top:13px; display:block;" ng-bind="dataType">{{dataType}}</span>
+                        <div class="dropdown" style="">
+                            <div class="btn btn-defaault btn-xs  dropdown-toggle" style="color:#eee;" type="button" data-toggle="dropdown">
+                                <span [hidden]="dataset.selectedKey">Select {{dataType}}</span>
+                                <span [hidden]="!dataset.selectedKey">{{dataset.selectedKey}}</span>
+                                <span class="caret"></span>
+                            </div>
+                            <ul class="dropdown-menu">
+                                <li *ngFor="let key of dataset.keyArr; let i = index;" (click)="optionChange(dataset.keyArr[i])" ><a href="#"> {{key}} </a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <span style="font-size:10px; margin-top:13px; display:block;">time frame</span>
+                    <div class="dropdown" style="">
+                        <div class="btn btn-defaault btn-xs  dropdown-toggle" style="color:#eee;" type="button" data-toggle="dropdown">
+                            {{timeRange.selected}}
+                            <span class="caret"></span>
+                        </div>
+                        <ul class="dropdown-menu">
+                            <li *ngFor="let time of timeRange.arr; let i = index;" (click)="rangeChange(timeRange.arr[i])"><a href="#"> {{time}} </a></li>
+
+                        </ul>
+                    </div>
+
+
+
+</ng-template>
+        </div>
+      
+        
+    
+    </div> <!-- end of well -->
+    <!-- <div class="panel panel-default panel-body">{{ dataset | json}}</div> -->
+  </div> 

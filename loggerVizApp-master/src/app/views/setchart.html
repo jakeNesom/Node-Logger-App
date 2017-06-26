@@ -1,0 +1,77 @@
+
+
+<div class="col-sm-5 col-lg-6">
+     
+               
+
+     <div class="panel panel-default panel-body">
+        <div >
+          <div [hidden]="!show">
+              <chart [options]="options"
+                (load)="saveInstance($event.context)">
+                  <!--<series (click)="toggleBarChart($event)" >
+
+                  </series>-->
+               </chart>
+          </div>
+         
+        </div>
+        <div [hidden]="show" >
+            <div class="btn btn-default btn-sm" (click)="toggleBarChart($event)">Back to chart</div>
+            
+                    <!--<br />
+                    <h4><strong>{{listData.Client}} {{loggerService.filterObj.Node}}</strong></h4>
+               
+                <div class="panel panel-default" *ngFor="let log of listData.pageData, index as i">
+                       <div class="panel-body"> <a data-toggle="collapse" attr.href="#collapse{{i}}">Log {{listData.pageIndex - 10 + i + 1}}</a>  
+                           <div attr.id="collapse{{i}}" class="panel-collapse collapse">
+                               <br /> Time: {{log.Time | date:'medium' }} <br /> ID: {{log._id}} <br /> Node: {{log.Node}}
+                           </div>
+                        </div>
+                </div>-->
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>{{listData.Client}}</th>
+                            <th>{{loggerService.filterObj.Node}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let log of listData.pageData, index as i">
+                            <td >
+                                <a data-toggle="collapse" attr.href="#collapse{{i}}">Log {{listData.pageIndex - 10 + i + 1}}</a>
+                            </td>
+                            <td>
+                                <div attr.id="collapse{{i}}" class="panel-collapse collapse">
+                                    <br /> Time: {{log.Time | date:'medium' }} <br /> ID: {{log._id}} <br /> Node: {{log.Node}}
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            <ul class="pager">
+                <li [ngClass]="listData.firstPage == true ? 'disabled' : '' "><a href="#"(click)="paginate(-10)"> Previous</a></li>
+                <li [ngClass]="listData.lastPage == true ? 'disabled' : '' "><a href="#" (click)="paginate(10)" > Next</a></li>
+            </ul>
+        </div>
+     </div> <!-- end of well -->
+     <div class="panel">
+       <div class="panel-heading btn btn-primary btn-block">
+         <div (click)="changeVisible()" style="font-size:15px;"> <i  class="fa fa-chevron-down fa-fw  " aria-hidden="true"></i>Show Data </div>
+       </div>
+        <div [@visibilityChanged]="isVisible" >
+          <div class="panel-body">
+            <p> Selected Client: <span class="label label-default"> {{currentClientC}} </span> 
+                &nbsp; &nbsp; Selected Node: <span class="label label-default">{{currentNodeC}} </span>
+                &nbsp; &nbsp; Selected Timeframe: <span class="label label-default">{{timeFilterC}} </span> </p>
+            <ul>
+              <li *ngFor="let record of dataset">Record #: {{record._id}} Client: {{record.Client}} TimeStamp: {{record.Time}} Node: {{record.Node}}</li>
+            </ul>
+          </div> <!-- end panel body -->
+        </div>
+     </div> <!-- end panel -->
+
+         
+    
+</div>
+

@@ -1,0 +1,142 @@
+<div id="box" [@flyOutIn]="flyOutIn" (click)="toggleFilters()" style="display:none;" >
+    <div id="floatDiv">
+        <span id="text">
+            <i class="fa fa-filter fa-2x" aria-hidden="true"></i>
+        </span>
+    </div>
+    <div id="floatShadow">
+
+    </div>
+    <div id="floatShadowOuter">
+    </div>
+</div>
+
+<div id="nav" class="header-panel">
+    <div class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><i class="fa fa-line-chart fa-lg" aria-hidden="true"></i>&nbsp;node.js load balance stats</a>
+            
+            
+            </div>
+            
+            <div class="navbar-collapse collapse navbar-responsive-collapse">
+            
+                <div class="nav navbar-nav navbar-right">
+                   
+                   <!--<a class="btn btn-sm btn-default btn-raised" href="http://localhost:3039/write/log" target="_blank"> to Logger </a> 
+                    <a class="btn btn-sm btn-success btn-raised" href="#" (click)="sendGet()"> Send GET </a>-->
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+</div>
+<div class="container-fluid main">
+<div class="row">
+    <div class="col-sm-3">
+       
+    </div>
+</div>
+<div class="row">
+    <div [@hideFilters]="hideShow" class="panel" id="popOptions">
+    <div class="panel-body">    
+    <div class="col-sm-1">
+         <div>
+            <i id="timesCircle" (click)="toggleFilters()"  class="fa fa-times-circle fa-2x fa-sw" aria-hidden="true"></i>
+         </div>
+    </div>
+    <form>
+    <div class="col-sm-3">
+               
+        
+                       
+                            <label for="clientSelect" class="col-md-2 control-label">Select Client</label>
+                            <div class="col-md-10">
+                                <select id="clientSelect" class="form-control" (change)="clientChange($event.target.value)">
+                                <option *ngFor="let client of allData.clientList" >{{client}}</option>
+                                
+                                </select>
+                            </div>
+                        
+    </div>
+    <div class="col-sm-3">
+                        
+                            <label for="node" class="col-md-2 control-label">Node: </label>
+                            <div class="col-md-10">
+                                <select id="node" class="form-control" (change)="nodeChange($event.target.value)">
+                                <option *ngFor="let node of allData.nodeList" >{{node}}</option>
+                                
+                                </select>
+                            </div>
+                        
+    </div>
+    <div class="col-sm-3">
+                       
+                            <label for="timeframe" class="col-md-2 control-label">Time: </label>
+                            <div class="col-md-10">
+                                <select id="timeframe" class="form-control" (change)="timeChange($event.target.value)">
+                                <option *ngFor="let time of allData.timeList" >{{time}}</option>
+                                
+                                </select>
+                            </div>
+                       
+    </div>
+    <div class="col-sm-1">
+                       
+                            <button href='javascript:void(0)' id="resetButton" type="reset" class="btn btn-sm btn-primary" (click)="resetSelect()" 
+                                for="resetSelect">Reset</button>
+    </div>
+    <div class="col-sm-1">              
+                  <div id="refreshButton"  href="#" (click)="toggleInterval()" [ngClass]="intervalStarted == true ? 'btn-default' : 'btn-primary' " class="btn btn-fab btn-fab-mini">
+                    <span *ngIf='intervalStarted'><span style="color:limegreen;"><i class="circleIcon fa fa-refresh fa-spin" aria-hidden="true"></i></span></span>
+                    <span *ngIf='intervalStarted == false'><span style="color:white;"><i class="fa fa-refresh fa-fw circleIcon" aria-hidden="true"></i></span></span>
+                  </div>    
+                        
+    </div>
+                    </form>
+    </div>
+                 
+    </div>
+    
+</div>
+<div class="row">
+          
+           <liveCount></liveCount>
+           
+      
+      
+
+                <!-- <chart2 
+                        [currentClientC]='currentClient' 
+                        [currentNodeC]='currentNode' 
+
+                        [timeFilterC]='timeFilter'></chart2>-->
+                
+                <setChart [currentClientC]='currentClient' 
+                        [currentNodeC]='currentNode' 
+                        [timeFilterC]='timeFilter'
+                        [activelyLookForDataC] = 'activelyLookForData'
+                        [currentColor] = 'currentColor' >
+                </setChart>
+
+                        
+                <!--<setChart
+                    [currentClientC]='currentClient' 
+                        [currentNodeC]='currentNode' 
+                        [timeFilterC]='timeFilter'> </setChart>-->
+
+        
+    </div> <!-- end of first row -->
+    <div class="row">
+       
+    </div> <!-- end of row -->
+
+    </div> <!-- end of lower container -->

@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('app/css/slider.css');
+@import url('app/css/radioslider.css');
+@import url('../node_modules/font-awesome/css/font-awesome.min.css');
+@import url('../node_modules/bootstrap/dist/css/bootstrap.min.css');
+@import url('../node_modules/bootstrap-material-design/dist/css/bootstrap-material-design.min.css');
+
+
+
+/* This is to hide the bootstrap popover title, material-design bootstrap and the installed ng-bootstrap are conflicting somehow*/
+.popover-title {
+    display:none;
+}
